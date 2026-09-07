@@ -1,3 +1,10 @@
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+    
 from crypto_toolkit.math.modular import mod_add, mod_mul, mod_pow, mod_reduce
 from crypto_toolkit.math.gcd import gcd, mod_inverse
 from crypto_toolkit.utilities.randomness import shannon_entropy, secure_randbelow
